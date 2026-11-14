@@ -32,7 +32,7 @@ export async function api<T>(path: string, { method = 'GET', body, auth = true }
       signal: controller.signal,
     })
   } catch {
-    throw new ApiError('Server se connect nahi ho paya. Internet check karke dobara try karein.', 0)
+    throw new ApiError('Unable to reach the server. Please check your internet connection and try again.', 0)
   } finally {
     window.clearTimeout(timer)
   }
